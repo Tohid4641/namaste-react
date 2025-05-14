@@ -33,7 +33,7 @@ References:
     - https://beta.reactjs.org/apis/react/createElement
     - https://www.youtube.com/watch?v=IrHmpdORLu8
 
-# Chapter 01 - Igniting Our App
+# Chapter 02 - Igniting Our App
 
 We build "create-react-app" from scratch and understand every details.
 
@@ -61,16 +61,16 @@ We build "create-react-app" from scratch and understand every details.
 
 * Don't use that
 
-> npx parcel index.html
-> npx parcel build index.html
+* > npx parcel index.html
+* > npx parcel build index.html
 
 * Instead Add scripts in package.json file 
     - "start": "parcel index.html", > npm run start (or) npm start
     - "build": "parcel build index.html" > npm run build
 
 * React Element: 
-    Plain JS object describe the DOM node or HTML Element.
-        React.createElement(
+    - Plain JS object describe the DOM node or HTML Element.
+        - React.createElement(
             'h1',                         
             { id: 'heading' },     
             'Hello World from React'
