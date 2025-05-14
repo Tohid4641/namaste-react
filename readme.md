@@ -59,33 +59,35 @@ We build "create-react-app" from scratch and understand every details.
 
 # Chapter 03 - Laying the foundation (React Element, JSX, Babel, Components)
 
-> npx parcel index.html        ---- X
-> npx parcel build index.html  ---- X
-    - Add scripts in package.json file 
-        - "start": "parcel index.html", > npm run start (or) npm start
-        - "build": "parcel build index.html" > npm run build
+* Don't use that
+
+> npx parcel index.html
+> npx parcel build index.html
+
+* Instead Add scripts in package.json file 
+    - "start": "parcel index.html", > npm run start (or) npm start
+    - "build": "parcel build index.html" > npm run build
 
 * React Element: 
     Plain JS object describe the DOM node or HTML Element.
         React.createElement(
-            'h1',                             render()                  HTML Element
-            { id: 'heading' },             --------------->   <h1>Hello World from React</h1>  -----> DOM ---> Display
+            'h1',                         
+            { id: 'heading' },     
             'Hello World from React'
         );
+    
+    React.createElement()--->{jsObj}--->render({jsObj})--->DOM
 
 * JSX (JavaScript XML):
     - HTML / XML Like Syntax
-    - JSX is not HTML in JS                     
-                                                use             
-                                        Parcel ------> BABEL
-                                            transpiled                                                                                  
-    <h1>Hello {name} from React</h1> --------------------------> React.createElement('h1', {id: 'heading'}, 'Hello world from React') ---
+    - JSX is not HTML in JS                  
+                                                                                   
+        < h1> Hello {writeJSCodeHere} from React </ h1>
     
-       render()                HTML Element
-    ---------------> <h1>Hello World from React</h1>  -----> DOM ---> Display
-                                            
+    JSX--->Babel --->React.createElement()--->{jsObj}--->render({jsObj})--->DOM  
+                                     
 * Components in React:
-    Reusable piece of code Every react component return HTML Element
+    * Reusable piece of code Every react component return HTML Element
         - Functional based components
         - Class based components
 
