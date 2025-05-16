@@ -195,7 +195,7 @@ App
 O O O O | O*  -----DOM Re-Render All------> O O O O O <br/>
 
 O O O O | O*  -----DOM Re-Render Only 5th------> O O O O O <br/>
-1 2 3 4<span>&nbsp;&nbsp;&nbsp;</span>5
+1 2 3 4<span>&nbsp;&nbsp;&nbsp;&nbsp;</span>5
 <br/>
 * = changes, new added
 
@@ -207,5 +207,23 @@ Key = {index}  X<br/>
 Key = {item.id}  Use this React Says
 
 If items are removed, updated or added this can change arrangement that react DOM don't understand that causes incorrect re-rendering, data inconsistence & unnecessary re-render.
+
+
+# Chapter 04 - Let's get Hooked
+
+## Two types of Export/Imports
+
+    1. Default
+        - export default **moduleName**;
+        - import **moduleName** from "path";
+    2. Named
+        - export **const moduleName**;
+        import { **moduleName** } from "path";
+
+### Libraries and Frameworks ?
+    - Developer expericence easy
+    - Write less code
+    - Optimize code
+    - Provide extra super power's ( We learn Hook's now )
 
 
