@@ -195,7 +195,7 @@ App
 O O O O | O*  -----DOM Re-Render All------> O O O O O <br/>
 
 O O O O | O*  -----DOM Re-Render Only 5th------> O O O O O <br/>
-1 2 3 4   5
+1 2 3 4<span>&nbsp;&nbsp;&nbsp;</span>5
 <br/>
 * = changes, new added
 
