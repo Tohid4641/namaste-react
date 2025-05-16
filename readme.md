@@ -192,20 +192,20 @@ App
 
 ### Key prop in React
      
-O O O O | O*  -----DOM Re-Render All------> O O O O O
+O O O O | O*  -----DOM Re-Render All------> O O O O O <br/>
 
-O O O O | O*  -----DOM Re-Render Only 5th------> O O O O O
+O O O O | O*  -----DOM Re-Render Only 5th------> O O O O O <br/>
 1 2 3 4   5                                      1 2 3 4 5
-
+<br/>
 * = changes, new added
 
 The key prop is used in react to identify by dom when multiples items render using map if you not giving unique key prop to each item the DOM consider this all the same items so that whenever the new item come or changes in existing items so DOM is not identify which items are new or changes so it will re-render all items, If you give unique key for each items the DOM with re-render exact item that have been added or updated.
 
 ### Not use index as a Key prop
 
-Key = {index}  X
+Key = {index}  X<br/>
 Key = {item.id}  Use this React Says
 
-If items are removed, updated or added this can change arrangement that react DOM don't understand thath causes incorrect re-rendering, data inconsistence & unnecessary re-render.
+If items are removed, updated or added this can change arrangement that react DOM don't understand that causes incorrect re-rendering, data inconsistence & unnecessary re-render.
 
 
