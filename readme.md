@@ -209,7 +209,7 @@ Key = {item.id}  Use this React Says
 If items are removed, updated or added this can change arrangement that react DOM don't understand that causes incorrect re-rendering, data inconsistence & unnecessary re-render.
 
 
-# Chapter 04 - Let's get Hooked
+# Chapter 05 - Let's get Hooked
 
 ## Two types of Export/Imports
 
@@ -225,5 +225,54 @@ If items are removed, updated or added this can change arrangement that react DO
     - Write less code
     - Optimize code
     - Provide extra super power's ( We learn Hook's now )
+
+### Why need Hook's
+
+    If you want to sync data layer with UI layer and expect the change in data directly reflect in UI is not possible you some how to refresh that UI to getting the letest updated data but its not happen using the normal javascript variable so React provide us the State variable with extra super power that extra super power is setState() function that triggered the UI component to re-render again.
+
+### What is Hook's
+
+    It is a normal JS utility functions provide extra super power for react variable to managing the state, side effects in react.
+
+    1. useState()
+        - It is used to manage the state inside a component locally.
+
+        - const [state, setState] = useState()
+
+    2. useEffect()
+        - It is used to run after a component render. It's used in API calls (or) those functionalities that we have to run after a component was render.
+
+        - const useEffect(()=> {}, [])
+            - ()=>{} ===> callback function
+            - [] ===> dependency array
+
+    - **STATE IN REACT**: state is a built-in object within a component that stores data about the component's current condition.
+
+    - **EFFECT IN REACT**: Effect refers to side effects triggered by a component's rendering process. These are operations that don't directly impact the component's UI but interact with the outside world, such as fetching data, setting up subscriptions, or directly manipulating the DOM. React uses the useEffect hook to manage these effects, allowing components to synchronize with external systems.
+
+### Reconciliation Algorithm In React (React Fiber since v16.8)
+
+Till Now we learn React achieve dynamic nature in UI by re-rendering the component to intract with updated data layer, But how can React do this? Now we will dive deep into Working of React.js.
+
+React uses Reconciliation algorithm 
+
+    - **Reconciliation**: The algorithm React uses to diff one tree with another to determine which parts need to be changed.
+
+    - **Update**: A change in the data used to render a React app. Usually the result of `setState`. Eventually results in a re-render.
+
+    React Re-render UI part (component) that need to be changed in efficient way beacuse of the Virtual DOM that is the "Representaion on the actual DOM". In first render react creates V.DOM and when the component state is changed the component should need to be re-render so react forms a new V.DOM and compare with old V.DOM and calculate the difference what need to be changed and Then it will update the actual DOM.
+
+    Reconciliation is the process of keeping 2 DOM Trees in sync by a library like ReactDOM. It is done by using Reconciler and a Renderer.
+
+    Reconciler uses Diffing Algorithm to find differences between Current Tree and Work in Progress Tree and sends computed changes to the Renderer.
+
+    The Renderer is the one that updates the app’s UI. Different devices can have different Renderers while sharing the same Reconciler.
+
+    [Learn more about React Fiber](https://github.com/acdlite/react-fiber-architecture)
+
+# Chapter 06 - Exploring the world
+
+
+
 
 
