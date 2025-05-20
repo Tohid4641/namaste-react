@@ -272,6 +272,44 @@ React uses Reconciliation algorithm
 
 # Chapter 06 - Exploring the world
 
+## Monolithic and Microservices Architechtures
+
+**Monolithic** applications are single, unified codebases, while microservices architectures break applications into smaller, independent services.
+
+    [ API Service + UI Service + Auth Service + DB Service + SMS Service ] = Monolithic App
+
+**Microservices** applications is structured as a collection of independently deployable, loosely coupled services.
+
+    [UI Service] --- / :1234
+    [ API Service ] --- /api :8080
+    [SMS Service] --- /sms :3000
+    [Auth Service] 
+    [DB Service]
+
+## API Call Approaches:
+
+1. App Loads ---> API call ---> Render
+2. App Loads ---> Render ---> API call ---> Re-render  **Better in UX In react we recommended**
+
+## Shimmer UI
+
+Fake representation on the actual UI that rendered before data comes.
+
+Shimmer UI, also known as skeleton UI or placeholder UI, is a user interface design pattern used to provide a visual representation of loading content.
+
+## Conditional Rendering:
+
+Rendered different UI's on the basic of conditions.
+
+Conditional rendering in React is a technique to render different UI elements or components based on certain conditions. It's similar to how conditions work in JavaScript, using statements like if/else, ternary operators, and logical operators to control what is displayed.
+
+
+
+
+
+
+
+
 
 
 

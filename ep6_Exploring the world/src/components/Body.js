@@ -1,8 +1,14 @@
 import RestaurantCard from "./restaurantCard";
 import { useEffect, useState } from "react";
+import Shimmer from "./Shimmer";
 
 const Body = () => {
     const [restaurantsData, setRestaurantsData] = useState([]);
+    const [filteredRestaurantsData, setFilteredRestaurantsData] = useState([]);
+
+    const [searchText, setSearchText] = useState("");
+
+    console.log(restaurantsData)
 
     // cards[4].card.card.gridElements.infoWithStyle.restaurants[0,1,2].info
 
@@ -14,15 +20,18 @@ const Body = () => {
         const res = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.99740&lng=79.00110&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING');
         const json = await res.json();
         setRestaurantsData(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+        setFilteredRestaurantsData(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
     }
 
-    return (
+    return restaurantsData.length <= 0 ? <Shimmer /> : (
         <div className='body'>
 
             <div className="topContainer">
                 <div className='searchContainer'>
-                    <input className='searchBar' type='text' />
-                    <button className='searchBtn btn'>Search</button>
+                    <input className='searchBar' value={searchText} onChange={(e) => { setSearchText(e.target.value) }} type='text' />
+                    <button className='searchBtn btn' onClick={() => {
+                        setFilteredRestaurantsData(restaurantsData.filter((res) => res?.info?.name?.toLowerCase().includes(searchText.toLowerCase())))
+                    }}>Search</button>
                 </div>
 
                 <div className="filterContainer">
@@ -35,7 +44,7 @@ const Body = () => {
 
             <div className='cardContainer'>
                 {
-                    restaurantsData.map((restaurant) => {
+                    filteredRestaurantsData.map((restaurant) => {
                         return (<RestaurantCard key={restaurant?.info?.id} data={restaurant?.info} />)
                     })
                 }
