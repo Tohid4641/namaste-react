@@ -21,7 +21,7 @@ const Body = () => {
         setFilteredRestaurantsData(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
     }
 
-    return restaurantsData.length <= 0 ? <Shimmer /> : (
+    return restaurantsData?.length <= 0 ? <Shimmer /> : (
         <div className='body'>
 
             <div className="topContainer">
@@ -42,7 +42,7 @@ const Body = () => {
 
             <div className='cardContainer'>
                 {
-                    filteredRestaurantsData.map((restaurant) => {
+                    filteredRestaurantsData?.map((restaurant) => {
                         return (<RestaurantCard key={restaurant?.info?.id} data={restaurant?.info} />)
                     })
                 }

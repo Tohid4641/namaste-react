@@ -123,3 +123,76 @@
     background-color: rgba(121, 118, 118, 0.105);
     box-shadow: 0px 0px 4px gray;
 }
+
+/* Error page Css */
+.error-container {
+    height: 97vh;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .error-content {
+    color: #fff;
+    max-width: 600px;
+    padding: 2rem;
+  }
+  
+  .error-code {
+    font-size: 8rem;
+    font-weight: bold;
+    margin: 0;
+    animation: popIn 0.5s ease-out;
+  }
+  
+  .error-message {
+    font-size: 2rem;
+    margin: 1rem 0;
+  }
+  
+  .error-description {
+    font-size: 1.1rem;
+    color: #e0e0e0;
+    margin-bottom: 2rem;
+  }
+  
+  .home-button {
+    background-color: #ffffff;
+    color: #764ba2;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .home-button:hover {
+    background-color: #f5f5f5;
+    color: #333;
+  }
+  
+  /* Animations */
+  @keyframes popIn {
+    0% {
+      transform: scale(0.5);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+/* Error page Css END */

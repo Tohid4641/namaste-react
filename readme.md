@@ -328,6 +328,20 @@ useEffect(() => {
   **};**
 **}, [])** : When you're setting intervals, WebSocket, or subscriptions, you must clean them up.
 
+### Routing
+Routing in web development refers to how navigation is handled in applications. Traditionally, HTML used server-side routing, where each URL change triggered a full page reload from the server. In contrast, React uses client-side routing via libraries like react-router-dom, allowing dynamic page rendering without reloading the browser, giving users a seamless single-page app (SPA) experience. React doesn’t include routing by default to stay lightweight and modular. On the backend, API routing handles HTTP requests (e.g., GET /api/users) to serve data or perform logic. While frontend routing decides what UI to show, backend/API routing decides what data to serve. Both work together: the frontend renders pages based on routes, and fetches data from backend APIs to populate those pages.
+
+- Analogy (for Interviews)
+Think of frontend routing like the TV remote — it changes what you see on the screen.
+Think of backend/API routing like the cable provider — it decides what content (data) is sent when you press a channel.
+
+### Two types of routing
+1. **Server Side Routing**
+    -   You request a page /about throuth anchor tag <a href='/about'>About</a> that make's a request call to the server and server get back with the HTML page and reload the whole page.
+
+2. **Client Side Routing**
+    - You request a page /about throuth react-router-dom utilities Link tage <Link to={'/about'} >About</Link> that replace only the component and whole page is not getting refresh.
+
 
 
 
