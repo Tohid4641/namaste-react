@@ -303,6 +303,31 @@ Rendered different UI's on the basic of conditions.
 
 Conditional rendering in React is a technique to render different UI elements or components based on certain conditions. It's similar to how conditions work in JavaScript, using statements like if/else, ternary operators, and logical operators to control what is displayed.
 
+# Chapter 07 - Finding the path
+syntax:
+
+```
+useEffect(() => {
+  // side effect code here
+
+  return () => {
+    // cleanup code here (optional)
+  };
+}, [dependencies]);
+```
+
+**useEffect(()=>{}) with no dependency** : Execute every component render.
+
+**useEffect(()=>{}, []) with empty dependency** : Execute initial component render.
+
+**useEffect(()=>{}, [id]) with some dependency** : Execute first render with component render after execute if your dependency changes means **id** changes or updated.
+
+**useEffect(()=>{**
+    **return () => {**
+    **socket.close(); // Cleanup on unmount**
+  **};**
+**}, [])** : When you're setting intervals, WebSocket, or subscriptions, you must clean them up.
+
 
 
 
