@@ -1,3 +1,14 @@
+.app{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a{
+  text-decoration: none;
+}
+
 .header{
     border: 1px solid;
     display: flex;
@@ -70,11 +81,13 @@
 }
 
 .body .cardContainer{
+  
     display: flex;
     flex-wrap: wrap;
 }
 
 .body .card{
+  color: black;
     width: 240px;
     padding: 5px;
     margin: 13px;
@@ -196,3 +209,89 @@
     }
   }
 /* Error page Css END */
+
+/* Restaurant menu card design */
+
+.resMenu-container{
+  width: 90vw;
+  padding: 10px;
+}
+
+.resInfo-container{
+}
+
+.resInfo-container h1{
+  text-shadow: 4px 6px 5px rgba(0,0,0,0.36);
+}
+
+.resInfo-details{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff84;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px gray;
+  padding: 10px;
+}
+.resInfo-details img{
+  width: 200px;
+}
+
+.resMenu-items{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-item-container{
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  background-color: #f0f0f0;
+  padding: 10px;
+  margin-top: 10px;
+  box-shadow: 0px 0px 5px gray;
+}
+
+.menu-item-details{
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  gap: 10px;
+}
+
+.menu-item-img{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-item-img img{
+  width: 150px;
+  
+}
+
+.menu-item-img button{
+  color: green;
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 10px;
+  margin-top: 8px;
+  background-color: white;
+  border: none;
+  box-shadow: 0px 0px 3px rgb(0, 0, 0);
+  
+}
+
+.menu-item-img button:hover{
+  cursor: pointer;  
+  background-color: rgba(0, 128, 0, 0.096);
+}
+
+.menu-item-details-name{
+  font-size: large;
+  font-weight: 500;
+}
+
+/* Restaurant menu card design END*/
