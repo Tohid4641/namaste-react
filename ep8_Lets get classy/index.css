@@ -1,0 +1,297 @@
+.app{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a{
+  text-decoration: none;
+}
+
+.header{
+    border: 1px solid;
+    display: flex;
+    justify-content: space-between;
+    /* height: 100px; */
+}
+
+.header .logoContainer{
+    width: 100px;
+}
+
+.header .logoContainer img{
+    width: 100%;
+    height: 100%;
+}
+
+.header .navItems ul{
+    display: flex;
+    padding-right: 18px;
+}
+
+.header .navItems ul > li{
+    list-style: none;
+    cursor: pointer;
+    padding: 0 10px;
+}
+
+.header .navItems ul > li:hover{
+    color: rgba(71, 71, 71, 0.632);
+}
+
+.topContainer{
+    margin-top: 10px;
+     border: 1px solid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.body .searchContainer{
+    height: 50px;
+    width: 500px;
+    padding: 18px;
+}
+
+.filterContainer{
+    margin: 0 20px;
+}
+
+.body .searchBar{
+    width: 60%;
+    border-radius: 10px;
+    padding: 10px;
+    border: none;
+    margin: 0 10px;
+    box-shadow: 0px 0px 5px;
+}
+
+.btn{
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(1, 133, 89);
+    color: white;
+}
+
+.btn:hover{
+    background-color: rgb(0, 209, 139);
+}
+
+.body .cardContainer{
+  
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.body .card{
+  color: black;
+    width: 240px;
+    padding: 5px;
+    margin: 13px;
+    border-radius: 8px;
+    background-color: rgba(219, 219, 219, 0.409);
+    box-shadow: 0px 0px 4px gray;
+}
+
+.body .card:hover{
+    box-shadow: 0px 0px 10px gray;
+    cursor: pointer;
+}
+
+.body .card img{
+    height: 120px;
+    width: 100%;
+}
+
+.body .card .textContainer{
+   height: 100%;
+   width: 100%;
+}
+
+.shimmerCardContainer{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 20px;
+}
+
+.shimmerCard{
+    width: 240px;
+    height: 350px;
+ margin: 13px;
+    border-radius: 8px;
+    background-color: rgba(121, 118, 118, 0.105);
+    box-shadow: 0px 0px 4px gray;
+}
+
+.shimmerTopContainer{
+    margin: auto;
+    margin-top: 20px;
+    margin: 20px 20px;
+    width: 96%;
+    height: 120px;
+    border-radius: 8px;
+    background-color: rgba(121, 118, 118, 0.105);
+    box-shadow: 0px 0px 4px gray;
+}
+
+/* Error page Css */
+.error-container {
+    height: 97vh;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .error-content {
+    color: #fff;
+    max-width: 600px;
+    padding: 2rem;
+  }
+  
+  .error-code {
+    font-size: 8rem;
+    font-weight: bold;
+    margin: 0;
+    animation: popIn 0.5s ease-out;
+  }
+  
+  .error-message {
+    font-size: 2rem;
+    margin: 1rem 0;
+  }
+  
+  .error-description {
+    font-size: 1.1rem;
+    color: #e0e0e0;
+    margin-bottom: 2rem;
+  }
+  
+  .home-button {
+    background-color: #ffffff;
+    color: #764ba2;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .home-button:hover {
+    background-color: #f5f5f5;
+    color: #333;
+  }
+  
+  /* Animations */
+  @keyframes popIn {
+    0% {
+      transform: scale(0.5);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+/* Error page Css END */
+
+/* Restaurant menu card design */
+
+.resMenu-container{
+  width: 90vw;
+  padding: 10px;
+}
+
+.resInfo-container{
+}
+
+.resInfo-container h1{
+  text-shadow: 4px 6px 5px rgba(0,0,0,0.36);
+}
+
+.resInfo-details{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff84;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px gray;
+  padding: 10px;
+}
+.resInfo-details img{
+  width: 200px;
+}
+
+.resMenu-items{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-item-container{
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  background-color: #f0f0f0;
+  padding: 10px;
+  margin-top: 10px;
+  box-shadow: 0px 0px 5px gray;
+}
+
+.menu-item-details{
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  gap: 10px;
+}
+
+.menu-item-img{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-item-img img{
+  width: 150px;
+  
+}
+
+.menu-item-img button{
+  color: green;
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 10px;
+  margin-top: 8px;
+  background-color: white;
+  border: none;
+  box-shadow: 0px 0px 3px rgb(0, 0, 0);
+  
+}
+
+.menu-item-img button:hover{
+  cursor: pointer;  
+  background-color: rgba(0, 128, 0, 0.096);
+}
+
+.menu-item-details-name{
+  font-size: large;
+  font-weight: 500;
+}
+
+/* Restaurant menu card design END*/
