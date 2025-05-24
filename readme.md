@@ -342,6 +342,129 @@ Think of backend/API routing like the cable provider — it decides what content
 2. **Client Side Routing**
     - You request a page /about throuth react-router-dom utilities Link tage <Link to={'/about'} >About</Link> that replace only the component and whole page is not getting refresh.
 
+# Chapter 08 - Let's get Classy
+
+## Class Components: 
+
+- It is create using javascript ES6 classes that extends or inherit from React.Component and render() method is return the JSX, It is older way of creating the components in react.
+
+```
+class ComponentName extends from React.Component{
+    render(){
+        return (
+            <div>Class Component</div>
+        )
+    }
+}
+```
+- To get props in Class Component, passing props is same as in functional components
+```
+class ComponentName extends from React.Component{
+    constructor(props){
+        super(props)
+    }
+    render(){
+        return (
+            <div>this.props.name</div>
+        )
+    }
+}
+```
+To create state in Class Component
+```
+class ComponentName extends from React.Component{
+    constructor(props){
+        super(props)
+
+        this.state = {
+            count: 0
+        }
+    }
+    render(){
+        return (
+            <div>this.state.count</div>
+        )
+    }
+}
+```
+To set state in Class Component
+```
+class ComponentName extends from React.Component{
+    constructor(props){
+        super(props)
+
+        this.state = {
+            count: 0
+        }
+    }
+    render(){
+        return (
+            <div>
+                <h1>{this.state.count}</h1>
+                <button onClick={
+                    this.setState({
+                        count: this.state.count + 1
+                    })
+                }>Increament</button>
+            </div>
+        )
+    }
+}
+```
+
+## Component Lifecycle Phases and Lifecycle Methods
+
+## Lifecycle Phases: 
+ - Series of stages a component goes through from its creation to it's removal from the DOM.
+
+    1. BORN - Mounting: 
+        - These methods are called in the following order when an instance of a component is being created and inserted into the DOM.
+
+    2. GROW - Updating:
+        - An update can be caused by changes to props or state. These methods are called in the following order when a component is being re-rendered.
+    3. DIE - Unmounting:
+        - This method is called when a component is being removed from the DOM.
+
+## Lifecycle Methods:
+
+At each phases different methods is used for different use cases.
+
+1. Mounting
+    - **constructor()**: Initial state or Bind
+    - static getDerivedStateFromProps()
+    - **render()**: Return jsx rendered to DOM
+    - **componentDidMount()** : After component mounted/loaded
+
+2. Updating
+    - static getDerivedStateFromProps()
+    - shouldComponentUpdate()
+    - **render()**: 
+    - getSnapshotBeforeUpdate()
+    - **componentDidUpdate()**: After component updated
+
+3. Unmounting
+    - **componentWillUnmount()**: Before component was removed
+
+## React execute components lifecycle phases in 2 stages.
+
+- While react encounters two child class components that are siblings each other than in that case the react is Batching update both in render phase first and then its will execute the commit phase.
+
+1. Render Phase: Pure and has no side effects. May be paused, aborted or restarted by React.
+
+- Mounting [ constructor --> render ]
+- Updating [ render ]
+- Unmounting []
+
+2. Commit Phase: Can work with DOM, run side effects, schedule updates.
+
+- Mounting [ componentDidMount ]
+- Updating [ componentDidUpdate ]
+- Unmounting [ componentWillUnmount ]
+
+[Refer this Diagram](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/):
+
+
+
 
 
 
