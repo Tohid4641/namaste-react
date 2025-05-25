@@ -463,16 +463,5 @@ At each phases different methods is used for different use cases.
 
 [Refer this Diagram](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/):
 
-
-
-
-
-
-
-
-
-
-
-
-
+# Chapter 09 - Optimizing Our App
 
