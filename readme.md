@@ -465,3 +465,205 @@ At each phases different methods is used for different use cases.
 
 # Chapter 09 - Optimizing Our App
 
+## Single Responsibility Principle (SRP):
+- The Single Responsibility Principle (SRP) in React suggests that each component should have one clear responsibility or role. In other words, a React component should do one thing and do it well.
+- Do one task only
+
+## Modular Code
+- Modular code refers to the practice of breaking down a large application into smaller, independent, and reusable modules or components.
+- use for test cases (easly)
+- Reuse component (Reusability)
+- Maintainability
+- Testable
+
+## Custom Hook's
+
+Custom hooks in React are JavaScript functions that enable the reuse of stateful logic across different components. They follow specific naming conventions, always starting with the prefix "use," such as useCounter or useFetch.
+
+## Lazy Loading / Dynamic Bundling / Chunking / On Demand Loading / Code Splitting / Dynamic Import
+
+### What is Lazy Loading in React?
+Lazy Loading in React means loading components only when they are needed, instead of loading everything at once during the initial render.
+
+### Why Use Lazy Loading?
+To improve performance by reducing the initial load time of the app — especially for large applications with many components or routes
+
+### Example: Without Lazy Loading
+`
+import About from "./About"; // Loaded immediately
+
+function App() {
+  return (
+    <div>
+      <Home />
+      <About />
+    </div>
+  );
+}
+`
+-  Even if About is not shown initially, it gets loaded right away.
+
+### With Lazy Loading (React's lazy and Suspense)
+`
+import { lazy, Suspense } from "react";
+
+const About = lazy(() => import("./About")); // Lazy loaded
+
+function App() {
+  return (
+    <div>
+      <Home />
+      <Suspense fallback={<div>Loading...</div>}>
+        <About />
+      </Suspense>
+    </div>
+  );
+}
+
+`
+- **lazy():** tells React to load the component on demand.
+
+- **Suspense:** wraps lazy-loaded components and shows a fallback (like a loading spinner) while loading.
+
+### Common Use Case: Lazy Loading Routes
+`
+const Contact = lazy(() => import("./pages/Contact"));
+
+<Route path="/contact" element={
+  <Suspense fallback={<div>Loading contact page...</div>}>
+    <Contact />
+  </Suspense>
+} />
+
+`
+
+### Benefits
+
+- Faster initial load
+- Reduced bundle size
+- Better user experience on slow networks
+
+# Chapter 10 - Jo Dikhta Hai Wo Bikta Hai ( UI )
+
+- To beutify UI we use simple css or custome css
+
+## Sass ( Syntactically Awesome Stylesheet ):
+- css preprocessor, a scripting language that is compiled into css.
+
+## Scss ( Sassy Cascading Style Sheets ):
+- It is also a css preprocessor, only syntax and extension difference.
+
+**.css**
+`
+body {
+  color: #333;
+}
+
+.container {
+  padding: 10px;
+}
+`
+
+**.sass**
+
+`
+body
+  color: #333
+
+.container
+  padding: 10px
+
+`
+
+**.scss**
+`
+$primary-color: #333;
+
+body {
+  color: $primary-color;
+}
+
+.container {
+  padding: 10px;
+
+  .inner {
+    margin: 5px;
+  }
+}
+
+`
+
+## Frameworks:
+    1. styled-component -- Industry standard
+    2. Material UI
+    3. Bootstap
+    4. Chakra-UI
+    5. Tailwind CSS -- We use this
+    ...
+
+## Tailwind CSS
+- Rapidly build modern websites without ever leaving your HTML.
+
+### What is Post CSS:
+ - Tool for transforming CSS inside JS
+
+Tailwind ---Uses Behind---> Post CSS
+
+### Installation:
+    ---> Choose Framework
+    ---> Follow Steps
+
+### Pros
+1. Tailwind is lightweight and easy to use becuase it's includes only required CSS.
+2. You have not move towards CSS and HTML files while writting CSS.
+
+### Cons
+1. Initial Learning Curve
+2. Your JS file should lenthy while wrtting complex CSS.
+
+# Chapter 11 - (Data is the new Oil)
+
+## Higher Order Component (HOC):
+- Advance technique for reusing component logic.
+- It is a function that takes a component as an argument and returns a new, enhanced component.
+`
+<Comp. />
+    -------I/P------> 
+        
+        function(component){
+            return(props){
+                return(
+                    <component {props}>
+                )
+            }
+        }
+        
+    <--------O/P---------
+<Comp./>  // Enhanced Component
+`
+
+## Lifting State Up & Controlled and Uncontrolled Components
+
+[Refer this DOC](https://react.dev/learn/sharing-state-between-components#lifting-state-up-by-example):
+
+Sometimes, you want the state of two components to always change together. To do it, remove state from both of them, move it to their closest common parent, and then pass it down to them via props. This is known as lifting state up, and it’s one of the most common things you will do writing React code.
+
+- When you want to coordinate two components, move their state to their common parent.
+- Then pass the information down through props from their common parent.
+- Finally, pass the event handlers down so that the children can change the parent’s state.
+- It’s useful to consider components as “controlled” (driven by props) or “uncontrolled” (driven by state).
+
+### What is the single source of truth (SSOT) concept?
+The SSOT concept, in software development, states that pieces of data should be stored in only one location within a system, ensuring there is one…
+
+This ensures consistency and prevents data from being duplicated, reducing the risk of conflicts and discrepancies in the UI.
+
+## Props Drilling
+
+[Refer this DOC](https://react.dev/learn/passing-data-deeply-with-context#replace-prop-drilling-with-context):
+
+Prop drilling in React refers to the process of passing data (props) down through multiple layers of nested components to reach a deeply nested child component that needs that data.
+
+## Context
+
+React Context provides a way to share data between components without explicitly passing props through every level of the component tree. It's a way to manage global state, making data accessible to any component in the application, regardless of nesting.
